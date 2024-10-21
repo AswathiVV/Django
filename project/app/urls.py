@@ -7,5 +7,6 @@ urlpatterns = [
     path('fun4/<int:a>/<int:b>/<int:c>',views.fun4),
     path('index',views.index_page),
     path('demo',views.demo),
-    path('snd',views.snd)
+    path('snd',views.snd),
+    path('todo',views.fun)
 ]
