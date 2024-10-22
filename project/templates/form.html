@@ -10,12 +10,12 @@
 <body>
     <form action="" method="post">
         {% csrf_token %}
-        <input type="text" placeholder="ID" name="id">
-        <input type="text" placeholder="Task" name="task">
+        <input type="text" placeholder="ID" name="id" value="{{data.id}}">
+        <input type="text" placeholder="Task" name="task" value="{{data.task}}">
         <input type="submit" value="submit">
 
     </form>
-    <table>
+    <!-- <table>
         <tr>
             <th>Id</th>
             <th>Task</th>
@@ -24,9 +24,10 @@
         <tr>
             <td>{{i.id}}</td>
             <td>{{i.task}}</td>
+            <td><a href="form">{{i.edit}}</a></td>
         </tr>
         {% endfor %}
-    </table>
+    </table> -->
     
 </body>
 </html>

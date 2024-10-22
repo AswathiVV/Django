@@ -9,5 +9,6 @@ urlpatterns = [
     path('demo',views.demo),
     path('snd',views.snd),
     path('todo',views.fun),
-    path('form1',views.form1)
+    path('edit/<id>',views.form2),
+    path('delete/<id>',views.delete)
 ]

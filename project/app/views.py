@@ -36,7 +36,7 @@ def demo(req):
 def snd(req):
     return render(req,"second.html")
 
-todo=[]
+todo=[{'id':'1','task':'task1'},{'id':'2','task':'task2'}]
 def fun(request):
     if request.method=='POST':
         id=request.POST['id']
@@ -46,16 +46,27 @@ def fun(request):
         return redirect(fun)
     return render(request,'todo.html',{'todo':todo})
 
-todo=[]
-def form1(request):
+
+def form2(request,id):
+    task=' '
+    for i in todo:
+        if i['id']==id:
+            task=i
     if request.method=='POST':
         id=request.POST['id']
-        task=request.POST['task']
-        todo.append({'id':id,'task':task})
-        print(todo)
-        return redirect(todo)
-    return render(request,'form.html',{'todo':todo})
+        task1=request.POST['task']
+        task['id']=id
+        task['task']=task1
         
+        return redirect(fun)
+    return render(request,'form.html',{'data':task})
+
+
+def delete(request,id):
+    for i in todo:
+        if i['id']==id:
+            todo.remove(i)
+    return redirect(fun)               
 
 
 
