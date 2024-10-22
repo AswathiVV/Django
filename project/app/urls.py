@@ -8,5 +8,6 @@ urlpatterns = [
     path('index',views.index_page),
     path('demo',views.demo),
     path('snd',views.snd),
-    path('todo',views.fun)
+    path('todo',views.fun),
+    path('form1',views.form1)
 ]

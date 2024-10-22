@@ -46,6 +46,17 @@ def fun(request):
         return redirect(fun)
     return render(request,'todo.html',{'todo':todo})
 
+todo=[]
+def form1(request):
+    if request.method=='POST':
+        id=request.POST['id']
+        task=request.POST['task']
+        todo.append({'id':id,'task':task})
+        print(todo)
+        return redirect(todo)
+    return render(request,'form.html',{'todo':todo})
+        
+
 
 
 
