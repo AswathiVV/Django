@@ -7,3 +7,7 @@ class Student(models.Model):
     age=models.IntegerField()
     email=models.EmailField()
     phno=models.IntegerField()
+
+    def _str_(self):
+        return self.name
+
