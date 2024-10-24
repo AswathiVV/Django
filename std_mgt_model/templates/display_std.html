@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <body>
+    <form action="add_std" method="post">
+        {% csrf_token %}
+        <input type="number" placeholder="roll_no" name="roll" >
+        <input type="text" placeholder="name" name="name">
+        <input type="number" placeholder="age" name="age">
+        <input type="email" placeholder="email" name="email">
+        <input type="tel" placeholder="phno" name="phno">
+        <input type="submit" value="add">
+    </form>
     <table>
         <tr>
             <th>Roll No</th>
@@ -23,6 +32,10 @@
             <td>{{std.age}}</td>
             <td>{{std.email}}</td>
             <td>{{std.phno}}</td>
+            <td>
+                <a href="edit_std/{{std.pk}}">Edit</a>
+                <a href="">Delete</a>
+            </td>
         </tr>
         {% endfor %}
 
