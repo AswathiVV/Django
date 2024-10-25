@@ -6,5 +6,6 @@ urlpatterns = [
     path('x',views.disp_std),
     # path('g',views.fun),
     path('add_std',views.add_std),
-    path('edit_std/<id>',views.edit_std)
+    path('edit_std/<id>',views.edit_std),
+    path('delete_std/<id>',views.delete_std)
 ]
