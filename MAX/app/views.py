@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 
 def shop_login(req):
     if 'shop' in req.session:
-        return redirect(shop_login)
+        return redirect(shop_home)
     else:
     
         if req.method=='POST':
@@ -15,7 +15,7 @@ def shop_login(req):
             if data:
                 login(req,data)
                 req.session['shop']=uname      # create
-                return redirect(shop_login)
+                return redirect(shop_home)
             
         return render(req,'login.html') 
 

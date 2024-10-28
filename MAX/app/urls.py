@@ -4,9 +4,9 @@ urlpatterns=[
     path('',views.shop_login),
     path('logout',views.shop_logout),
 
-    # Admin
+# ------------------Admin--------------------------------
 
     path('shop_home',views.shop_home)
 
-    # user
+#------------------user----------------------------------
 ]
