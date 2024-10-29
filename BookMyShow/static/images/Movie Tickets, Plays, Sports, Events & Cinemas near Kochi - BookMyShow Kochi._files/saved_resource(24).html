@@ -1,0 +1,43 @@
+
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        position: absolute;
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="js-promotion-banner" loading="lazy" onclick="handleBannerClick(event)" src="https://assets-in.bmscdn.com/promotions/cms/creatives/1728312381641_8thoctofferoftheweekweb.jpg" alt="promotion-banner">
+    <script>
+      function handleBannerClick(event) {
+        event.preventDefault();
+        if ("https://in.bookmyshow.com/explore/stream-movies-stream-save-offer") {
+          let xhr = new XMLHttpRequest();
+          xhr.open("GET", "https://adtech-events.bookmyshow.com/adevent/v2/click?reqid=9ca7466e-e0c6-4452-9b1b-bf2c9c77d743");
+          xhr.send();
+		  if('prod_desktop_hp_carousel_5'){
+              window.parent.BMSSDK.fireImpression("prod_desktop_hp_carousel_5")
+        	}
+          window.open("https://in.bookmyshow.com/explore/stream-movies-stream-save-offer");
+        }
+      }
+	  if (!'https://in.bookmyshow.com/explore/stream-movies-stream-save-offer') {
+        var imgId = document.getElementById("js-promotion-banner");
+        if (imgId) {
+          imgId.style.cursor = "default";
+        }
+      }
+    </script>
+  
+</body></html>

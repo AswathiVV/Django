@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book My Show</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <link rel="stylesheet" href="bms.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  {% load static %}
+  <link rel="stylesheet" href="{% static '/css/bms.css' %}">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:white;">
+    <div class="container-fluid">
+        <a href="">
+            <img src="{% static 'images/logo.jpg'  %}" alt="" style="height: 50px;padding-left: 75%;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          
+            <form action="" class="d-flex">
+            </form>
+            <li class="navbar-nav me-auto ">
+                <form action="" class="d-flex " style="padding-left: 25%;">
+                    <!-- <i class="bi bi-search" style="color: rgb(113, 110, 110);padding-top: 5px;left: 1%;"></i> -->
+                    <input type="text" style="width: 500px;" class="form-control me-1 srch" placeholder="      Search for Movies,Events,Plays,Sports and Activities">
+                </form>
+            </li>
+            <!-- <form action="" method="get" class="d-flex search-container">
+                <input type="text" name="query" class="form-control me-1 srch" placeholder="Search for Movies, Events, Plays, Sports, and Activities">
+                <button type="submit" class="search-icon">
+                    <i class="bi bi-search" style="color: rgb(178, 166, 166);"></i>
+                </button>
+            </form> -->
+
+            <li class="nav-item" style="list-style-type: none;padding-left: 62%;position: absolute;padding-top: 10px;">
+              <a href="" class="nav-link">Kochi<i class="bi bi-chevron-down"></i></a>
+            </li>
+            <li class="nav-item" style="list-style-type: none;position: absolute;padding-left: 67%;">
+              <button type="button" class="btn btn-danger"><a href="" class="nav-link">Sign in</a></button>
+            </li>
+            <li class="nav-item" style="list-style-type: none;position: absolute;padding-left: 53%;">
+              
+              <input type="checkbox" id="toggle">
+              <label for="toggle" class="hamburger">&#9776;</label>
+              
+            
+              <div class="sidebar">
+                  <h2>Hey!</h2>
+                  <div class="special-offer">
+                      <img src="{% static 'images/rewards_login.avif' %}" alt="Offer Icon">
+                      <div>
+                          <p>Unlock special offers & great benefits</p>
+                          <button>Login / Register</button>
+                      </div>
+                  </div>
+                  <ul>
+                      <li><a href="#"><i class="bi bi-bell"></i><span style="padding-left: 20px;">Notifications<i style="padding-left: 37%;" class="bi bi-chevron-right"></i></span></a></li>
+                      <li><a href="#"><i class="bi bi-handbag"></i><span style="padding-left: 20px;">Your Orders<i style="padding-left: 37%;" class="bi bi-chevron-right"></i></span></a></li>
+                      <li><a href="#"><i class="bi bi-collection-play"></i><span style="padding-left: 20px;">Stream Library<i style="padding-left: 30%;" class="bi bi-chevron-right"></i></span></a></li>
+                      <li><a href="#"><i class="bi bi-credit-card-2-front"></i><span style="padding-left: 20px;">Play Credit Card<i style="padding-left: 25%;" class="bi bi-chevron-right"></i></span></a></li>
+                      <li><a href="#"><i class="bi bi-chat-dots"></i><span style="padding-left: 20px;">Help & Support<i style="padding-left: 29%;" class="bi bi-chevron-right"></i></span></a></li>
+                      <li><a href="#"><i class="bi bi-gear"></i><span style="padding-left: 20px;">Accounts & Settings<i style="padding-left: 16%;" class="bi bi-chevron-right"></i></span></a></li>
+                      <li><a href="#"><i class="bi bi-gift"></i><span style="padding-left: 20px;">Rewards<i style="padding-left: 47%;" class="bi bi-chevron-right"></i></span></a></li>
+                      <li><a href="#"><i class="bi bi-gear-wide-connected"></i><span style="padding-left: 20px;">BookAChange<i style="padding-left: 32%;" class="bi bi-chevron-right"></i></span></a></li>
+                  </ul>
+              </div>
+            </li>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar2 navbar-expand-lg navbar-dark" style="background-color:rgb(184, 221, 239);">
+  <div class="container-fluid">
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar" >
+        <ul class="navbar-nav me-auto navbar-dark">
+          <li class="nav-item">
+              <a href="" class="nav-link" style="color: black;" >Movies</a>
+          </li>
+          <li class="nav-item">
+              <a href="" class="nav-link" style="color: black;">Stream</a>
+          </li>
+          <li class="nav-item">
+              <a href="" class="nav-link" style="color: black;">Events</a>
+          </li>
+          <li class="nav-item">
+              <a href="" class="nav-link" style="color: black;">Plays</a>
+          </li>
+          <li class="nav-item">
+              <a href="" class="nav-link" style="color: black;">Sports</a>
+          </li>
+          <li class="nav-item">
+              <a href="" class="nav-link" style="color: black;">Activities</a>
+          </li>
+       
+      </ul>
+          <form action="" class="d-flex">
+          </form>
+        
+      </div>
+  </div>
+</nav>
+<div class="container-expand" style="width: 100%;"> 
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{% static 'images/slide1.avif' %}" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="{% static 'images/slide2.avif' %}" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="{% static 'images/slide3.avif'%}" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+   
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="sub">
+  <h1 class="title"  style="padding-left: 10%;">Recommended Movies</h1>
+            <div class="movies-list">
+                <div class="card-container">
+                    <div class="movie">
+                        <a href="bms_p1.html">
+                        <div class="card">
+                            
+                                <img src="{% static 'images/r1.avif' %}" class="card-img" alt="">
+                            
+                            
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                               
+                            </div>
+                        </div>
+                        </a>
+                        <h3>A.R.M</h3>
+                        <p class="detail">Action/Adventure/Drama/Period</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r2.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                               
+                            </div>
+                        </div>
+                        <h3>Joker:Folie a Deux</h3>
+                        <p class="detail">Drama/Suspence/Thriller</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r3.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                              
+                            </div>
+                        </div>
+                        <h3>Venom The Last Dance</h3>
+                        <p class="detail">Action/Adventure</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r4.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                               
+                            </div>
+                        </div>
+                        <h3>Devara</h3>
+                        <p class="detail">Action/Thriller</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r5.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                            </div>
+                        </div>
+                        <h3>Thekku Vadakku</h3>
+                        <p class="detail">Commedy/Drama</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r6.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                            </div>
+                        </div>
+                        <h3>Oru Kattil Oru Muri</h3>
+                        <p class="detail">Action/Drama/Romantic</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r7.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="thumbs-up-sharp" style="color: green;"></ion-icon>
+                                <p>3k likes</p>
+                            </div>
+                        </div>
+                        <h3>Meiyazhagan</h3>
+                        <p class="detail">Drama/Thriller</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r8.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>84% &ThinSpace; 226 votes</p>
+                            </div>
+                        </div>
+                        <h3>M.S.Dhoni</h3>
+                        <p class="detail">Comedy/Drama/Thriller</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'images/r9.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="thumbs-up-sharp" style="color: green;"></ion-icon>
+                                <p>111 likes</p>
+                            </div>
+                        </div>
+                        <h3>Kishkinda Kaandam</h3>
+                        <p class="detail">Drama/Fantasy/Thriller</p>
+                    </div>
+                    <div class="movie">
+                      <div class="card">
+                          <img src="{% static 'images/r10.avif' %}" class="card-img" alt="">
+                          <div class="card-body">
+                              <ion-icon name="thumbs-up-sharp" style="color: green;"></ion-icon>
+                              <p>111 likes</p>
+                          </div>
+                      </div>
+                      <h3>Pushpaka Vimanam</h3>
+                      <p class="detail">Drama/Fantasy/Thriller</p>
+                  </div>
+
+                </div>
+            </div>
+
+</div>
+
+<div class="s1" style="margin: auto;position: relative;width: 80%;padding-top: 5%;">
+  <img class="simg" src="{% static 'images/bar.avif' %}" style="width: 100%;height: auto;display: block;" alt="">
+</div>
+
+<h1 class="s2">The Best of Entertainment</h1>
+<div class="sub2">
+    <div class="enter-container">
+
+        <div class="card">
+            <img src="{% static 'images/l1.avif' %}" class="card-img" alt="">
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/l2.avif' %}" class="card-img" alt="">
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/l3.avif' %}" class="card-img" alt="">
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/l4.avif' %}" class="card-img" alt="">
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/l5.avif' %}" class="card-img" alt="">
+        </div>
+
+        
+
+    </div>
+</div>
+<br><br>
+
+<div class="premiere" style="position: relative;">
+    <img class="pimg" src="{% static 'images/plogo.avif' %}" alt="" style="position: absolute;padding-left: 9%;width:85% ;">
+  
+    <h2 style="padding-top: 10%;padding-left: 10%;">Premieres</h2>
+    <p style="padding-left: 10%;">Brand new releases every Friday</p>
+              <div class="movies-list">
+                
+                  <div class="card-container" style="padding-top: 3%;">
+                      <div class="movie">
+                          <div class="card">
+                              <img src="{% static 'images/p1.avif' %}" class="card-img" alt="">
+                              <div class="card-body">
+                                  <ion-icon name="heart-sharp"></ion-icon>
+                                 
+                              </div>
+                          </div>
+                          <h3>The Layoff Party</h3>
+                          <p class="detail">Hindi</p>
+                      </div>
+  
+                      <div class="movie">
+                          <div class="card">
+                              <img src="{% static 'images/p2.avif' %}" class="card-img" alt="">
+                              <div class="card-body">
+                                  <ion-icon name="heart-sharp"></ion-icon>
+                                 
+                              </div>
+                          </div>
+                          <h3>Sidone In Japan</h3>
+                          <p class="detail">French</p>
+                      </div>
+  
+                      <div class="movie">
+                          <div class="card">
+                              <img src="{% static 'images/p3.avif' %}" class="card-img" alt="">
+                              <div class="card-body">
+                                  <ion-icon name="heart-sharp"></ion-icon>
+                                
+                              </div>
+                          </div>
+                          <h3>Hoy Maharaja</h3>
+                          <p class="detail">Marati</p>
+                      </div>
+  
+                      <div class="movie">
+                          <div class="card">
+                              <img src="{% static 'images/p4.avif' %}" class="card-img" alt="">
+                              <div class="card-body">
+                                  <ion-icon name="heart-sharp"></ion-icon>
+                                 
+                              </div>
+                          </div>
+                          <h3>Shyamchi Ayi</h3>
+                          <p class="detail">Marati</p>
+                      </div>
+  
+                      <div class="movie">
+                          <div class="card">
+                              <img src="{% static 'images/p5.avif' %}" class="card-img" alt="">
+                              <div class="card-body">
+                                  <ion-icon name="heart-sharp"></ion-icon>
+                              </div>
+                          </div>
+                          <h3>The Good The Bad The Weird</h3>
+                          <p class="detail">Japan</p>
+                      </div>
+  
+                      <div class="movie">
+                          <div class="card">
+                              <img src="{% static 'images/p6.avif' %}" class="card-img" alt="">
+                              <div class="card-body">
+                                  <ion-icon name="heart-sharp"></ion-icon>
+                              </div>
+                          </div>
+                          <h3>Bang Bang</h3>
+                          <p class="detail">Hindi</p>
+                      </div>
+  
+                      
+                  </div>
+              </div>
+  
+  </div><br><br>
+ 
+
+<footer>
+    <div class="footer-top">
+        <div class="top-left">
+            <img src="{% static 'images/f2.jpg' %}" style="position: absolute;width: 40px;height: 40px;">
+            <p><span style="font-size: 18px;padding-left: 5%;font-weight: 60px;">List your Show</span> Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow . <span style="padding-left: 35%;"><button>Contact today!</button></span></p>
+            
+        </div>
+        <br>
+        <img src="{% static 'images/blob.jpg' %}" alt="">
+        
+    </div>
+    
+
+    <div class="footer-links">
+        <div class="link-section">
+            <h3>Movies Now Showing in Kochi</h3>
+            <p>Velteagan | A.R.M | Kothikunna Kaandam | Joker: Folie a Deux | Thekku Vadakku | Venom: The Last Dance | Pushpaka Vimanam | Devara - Part 1 | Oru Kattil Oru Muri</p>
+        </div>
+        <div class="link-section">
+            <h3>Upcoming Movies in Kochi</h3>
+            <p>Villain | Life of a Gangster | Khoka Bhai Tama Pain | Karma | Vettaiyan The Hunter | Andaz | SuperMan: The Christopher Reeve Story | Apradhi | Kandahar</p>
+        </div>
+        <div class="link-section">
+            <h3>Movies by Genre</h3>
+            <p>Drama Movies | Action Movies | Thriller Movies | Comedy Movies | Romantic Movies | Crime Movies | Horror Movies | Fantasy Movies | Suspense Movies</p>
+        </div>
+        <div class="link-section">
+            <h3>Movies by Language</h3>
+            <p>Movies in Malayalam | Movies in English | Movies in Tamil | Movies in Telugu | Movies in Hindi | Movies in Portuguese | Movies in French</p>
+        </div>
+        <div class="link-section">
+            <h3>Sports Events in Kochi</h3>
+            <p>Running | Athletics | Motorsports | Rugby | Card Games | Pool | Hockey | Badminton</p>
+        </div>
+        <div class="link-section">
+            <h3>Events in Top Cities</h3>
+            <p>Events in Mumbai | Events in Bengaluru | Events in Pune | Events in Kolkata | Events in Kochi</p>
+        </div>
+        <div class="link-section">
+            <h3>Cinemas In Top Cities </h3>
+            <p>Events in Mumbai | Events in Bengaluru | Events in Pune | Events in Kolkata | Events in Kochi</p>
+        </div>
+        <div class="link-section">
+            <h3>Movies Now Showing</h3>
+            <p>Events in Mumbai | Events in Bengaluru | Events in Pune | Events in Kolkata | Events in Kochi</p>
+        </div>
+        <div class="link-section">
+            <h3>Countries</h3>
+            <p>Indonesia | Singapore | UAE | Sri Lanka | West Indies</p>
+        </div>
+        <div class="link-section">
+            <h3>Help</h3>
+            <p>About Us | Contact Us | Press Release | FAQs | Terms and Conditions | Privacy Policy</p>
+        </div>
+        <div class="link-section">
+            <h3>BookMyShow Exclusive</h3>
+            <p>About Us | Contact Us | Press Release | FAQs | Terms and Conditions | Privacy Policy</p>
+        </div>
+        <div class="link-section">
+            <img src="{% static 'images/fimg.jpg' %}" style="width: 100%;" alt="">
+        </div>
+    </div>
+</footer>
+
+  
+  
+</body>
+</html>
