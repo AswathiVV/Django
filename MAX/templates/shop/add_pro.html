@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Product</title>
 </head>
 <body>
     <h1>add product</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="pro_id" id="" placeholder="Product id">
+        <input type="text" name="name" id="" placeholder="Name">
+        <input type="number" name="price" id="" placeholder="Price">
+        <input type="number" name="offer_price" id="" placeholder="Offer Price">
+        <input type="file" name="img" id="">
+        <input type="submit" value="Add">
+        
+
+    </form>
 </body>
 </html>
