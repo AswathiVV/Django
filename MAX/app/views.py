@@ -113,14 +113,14 @@ def view_product(req,id):
      Product=product.objects.get(pk=id)
      return render(req,'user/view_pro.html',{'products':Product})                  
 
-def add_to_cart(req,pid):
-     Product=product.objects.get(pk=pid)
+def add_to_cart(req,id):
+     Product=product.objects.get(pk=id)
      print(Product)
      user=User.objects.get(username=req.session['user'])
      print(user)
-     data=Cart.objects.create(user=user,product=product)
+     data=Cart.objects.create(user=user,product=Product)
      data.save()
      return redirect(cart_display)
 
 def cart_display(req):
-    return render(req,'cart_display.html')   
+    return render(req,'user/cart_display.html')   
