@@ -45,7 +45,7 @@ input[type="email"] {
     /* color: #faf8f8; */
     font-size: 16px;
     text-shadow: #fff;
-    color: azure;
+    color: rgb(21, 22, 22);
 }
 
 
@@ -66,6 +66,10 @@ input[type="submit"]:hover {
     background: #6e7dff;
 }
 
+form h2{
+    color: #fff;
+    font-style: italic;
+}
 
 body::before {
     content: '';
