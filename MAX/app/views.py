@@ -109,9 +109,16 @@ def user_home(req):
         Product=product.objects.all()
         return render(req,'user/user_home.html',{'products':Product})                  
     
+
 def view_product(req,id):
+     user=User.objects.get(username=req.session['user'])
      Product=product.objects.get(pk=id)
-     return render(req,'user/view_pro.html',{'products':Product})                  
+     try:
+         cart=Cart.objects.get(product=Product,user=user)
+     except:
+         cart=None    
+     return render(req,'user/view_pro.html',{'products':Product,'cart':cart})                  
+
 
 def add_to_cart(req,id):
      Product=product.objects.get(pk=id)
@@ -123,4 +130,12 @@ def add_to_cart(req,id):
      return redirect(cart_display)
 
 def cart_display(req):
-    return render(req,'user/cart_display.html')   
+    user=User.objects.get(username=req.session['user'])
+    data=Cart.objects.filter(user=user)
+    return render(req,'user/cart_display.html',{'data':data})  
+
+def delete_cart(req,id):
+    data=Cart.objects.get(pk=id) 
+    data.delete()
+    return redirect(cart_display)
+
