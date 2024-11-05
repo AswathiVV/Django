@@ -16,7 +16,7 @@
                 <img src="{{products.img.url}}" style="width: 100%;height: 600px;" alt="">
                 <!-- {{pro.img}} -->
                 <div class="mt-5">
-                    <a href="" class="btn btn-outline-primary">Buy Now</a>
+                    <a href="../buy_pro/{{products.pk}}" class="btn btn-outline-primary">Buy Now</a>
                     {% if cart %}
                     <a href="../cart_display" class="btn btn-outline-primary">Go to cart</a>
                     <a href="../delete_cart/{{cart_obj.pk}}" class="btn btn-outline-dark"><i class="bi bi-trash"></i></a>

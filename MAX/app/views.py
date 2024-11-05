@@ -139,3 +139,16 @@ def delete_cart(req,id):
     data.delete()
     return redirect(cart_display)
 
+def buy_pro(req,id):
+    Product=product.objects.get(pk=id)
+    user=User.objects.get(username=req.session['user'])
+    price=Product.offer_price
+    data=Buy.objects.create(user=user,product=Product,price=price)
+    data.save()
+    return redirect(user_home)
+
+def user_view_bookings(req):
+    user=User.objects.get(username=req.session['user'])
+    data=Buy.objects.filter(user=user)
+    return render(req,'user/view_bookings.html',{'data':data})
+

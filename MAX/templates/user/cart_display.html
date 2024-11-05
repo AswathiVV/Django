@@ -14,9 +14,10 @@
             {% for cart_obj in data %}
             <div class="col-lg-12">
                 <img src="{{cart_obj.product.img.url}}" alt="" style="width: 300px;"><br><br>
-                {{cart_obj.product.name}}  <a href="../delete_cart/{{cart_obj.pk}}" class="btn btn-outline-dark"><i class="bi bi-trash"></i></a><br>
-                ₹ {{cart_obj.product.price}}
-                
+               
+                {{cart_obj.product.name}} <br>
+                ₹ {{cart_obj.product.price}} <br>
+                <a href="../buy_pro/{{cart_obj.product.pk}}" class="btn btn-outline-dark">Buy Now</i></a>  <a href="../delete_cart/{{cart_obj.pk}}" class="btn btn-outline-dark"><i class="bi bi-trash"></i></a><br><br>
             </div>
             {% endfor %}
         </div>
