@@ -11,6 +11,8 @@ urlpatterns=[
     path('add_product',views.add_product),
     path('edit_pro/<id>',views.edit_pro),
     path('delete_pro/<id>',views.delete_pro),
+    path('bookings',views.bookings),
+
     
 #------------------user----------------------------------
     path('user_home',views.user_home),
@@ -20,6 +22,7 @@ urlpatterns=[
     path('delete_cart/<id>',views.delete_cart),
     path('buy_pro/<id>',views.buy_pro),
     path('user_view_bookings',views.user_view_bookings),
+    
 
 
 ]

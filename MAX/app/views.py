@@ -60,6 +60,7 @@ def shop_home(req):
     else:
         return redirect(shop_login)  
 
+
 def add_product(req):
     if req.method=='POST':
         id=req.POST['pro_id']
@@ -71,6 +72,7 @@ def add_product(req):
         data.save()
         return redirect(shop_home)
     return render(req,'shop/add_pro.html') 
+
 
 def edit_pro(req,id):
         pro=product.objects.get(pk=id)
@@ -90,9 +92,6 @@ def edit_pro(req,id):
         return render(req,'shop/edit_pro.html',{'data':pro}) 
 
 
-
-
-
 def delete_pro(req,id):
         data=product.objects.get(pk=id)
         url=data.img.url
@@ -100,6 +99,11 @@ def delete_pro(req,id):
         os.remove('media/'+url)  
         data.delete()
         return redirect(shop_home) 
+
+
+def bookings(req):
+    bookings=Buy.objects.all()[::-1][:10]
+    return render(req,'shop/bookings.html',{'data':bookings})
 
 
 #------------------------------------- User--------------------------------------------------------------
@@ -129,15 +133,18 @@ def add_to_cart(req,id):
      data.save()
      return redirect(cart_display)
 
+
 def cart_display(req):
     user=User.objects.get(username=req.session['user'])
     data=Cart.objects.filter(user=user)
     return render(req,'user/cart_display.html',{'data':data})  
 
+
 def delete_cart(req,id):
     data=Cart.objects.get(pk=id) 
     data.delete()
     return redirect(cart_display)
+
 
 def buy_pro(req,id):
     Product=product.objects.get(pk=id)
@@ -147,8 +154,9 @@ def buy_pro(req,id):
     data.save()
     return redirect(user_home)
 
+
 def user_view_bookings(req):
     user=User.objects.get(username=req.session['user'])
-    data=Buy.objects.filter(user=user)
+    data=Buy.objects.filter(user=user)[::-1]
     return render(req,'user/view_bookings.html',{'data':data})
 
