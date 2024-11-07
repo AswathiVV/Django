@@ -3,4 +3,9 @@ from django.contrib.auth import authenticate,login,logout
 from .models import *
 # Create your views here.
 def bms(req):
-    return render(req,'bms.html')
+    data=movie.objects.all()
+    return render(req,'bms.html',{'data':data})
+
+def view_movie(req,id):
+    data=movie.objects.get(pk=id)
+    return render (req,'bms_p1.html',{'data':data})
