@@ -9,8 +9,15 @@
     <!-- <link rel="stylesheet" href="bms.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static '/css/bms.css' %}"> -->
 </head>
 <style>
+.carousel-item img{
+    width: 13.5%;
+    float: left;
+    
+}
 /* .p1{
     position: relative;
 }
@@ -95,15 +102,49 @@
     
     <div class="p1" style="background-image: url({{data.bg_img.url}});">
        
-        <img src="{{data.fg_img.url}}" alt="" style="width: 430px;height: 400px;padding-left: 10%;padding-top: 2%;"><h1>{{data.m_name}}</h1>
+        <img src="{{data.fg_img.url}}" alt="" style="width: 470px;height: 400px;padding-left: 15%;padding-top: 2%;"><h1 style="padding-left: 3%;display: inline;color: aliceblue;">{{data.m_name}}</h1>
         
     </div>
     <div class="pa1">
-        <h2 style="padding-left: 10%;">About the movie</h2><br><br><br>
+        <h2 style="padding-left: 10%;">About the movie</h2><br>
         <h4 style="padding-left: 10%;font-size: 17px;color: rgb(68, 61, 61);">Set in Northern Kerala across the years 1900, 1950, and 1990, this epic tale follows three generations of heroes Maniyan,<br> Kunjikelu, and Ajayan as they strive to protect the land's most vital treasure.</h4>
 
     </div>
-   
+
+
+    <div class="carousel slide container mt-4" id="caro" data-bs-ride="carousel" style="width: 80%;">   
+         <div  class="carousel-inner">
+
+           <div class="carousel-item active">
+            <h2 style="font-weight: bolder;">Cast</h2>
+            {% for i in member %}
+            {% if i.cast %}
+               <img src="{{i.img.url}}" class="rounded-circle" style="float: left;" >  
+               <h4>{{i.name}}</h4>
+               <h6>{{i.position}}</h6>  
+            {% endif %}
+            {% endfor %}   
+           </div>
+
+           <div class="carousel-item active" style="padding-top: 25%;">
+            <h2 style="font-weight: bolder;">Crew</h2>
+            {% for i in member %}
+            {% if i.crew %}
+               <img src="{{i.img.url}}" class="rounded-circle"  > 
+               <h4>{{i.name}}</h4>
+               <h6>{{i.position}}</h6>  
+            {% endif %}
+            {% endfor %}    
+           </div>
+
+           <button class="carousel-control-prev" type="button" data-bs-target="#caro" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+           </button>
+           <button class="carousel-control-next" type="button" data-bs-target="#caro" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+           </button>
+         </div> 
+    </div>
     
 </body>
 </html>

@@ -18,3 +18,11 @@ class Language(models.Model):
 class Moviefield(models.Model):
     movie=models.ForeignKey(movie,on_delete=models.CASCADE)  
     lang=models.ForeignKey(Language,on_delete=models.CASCADE)  
+
+class Members(models.Model):
+    name=models.TextField()
+    img=models.FileField()
+    position=models.TextField()
+    cast=models.BooleanField(default=False)
+    crew=models.BooleanField(default=False)
+    movie=models.ForeignKey(movie,on_delete=models.CASCADE)    

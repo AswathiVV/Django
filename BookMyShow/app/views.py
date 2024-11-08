@@ -8,4 +8,5 @@ def bms(req):
 
 def view_movie(req,id):
     data=movie.objects.get(pk=id)
-    return render (req,'bms_p1.html',{'data':data})
+    Member=Members.objects.filter(movie=data)
+    return render (req,'bms_p1.html',{'data':data,'member':Member})
