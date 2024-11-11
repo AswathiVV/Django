@@ -111,7 +111,70 @@
 
     </div>
 
+    
 
+
+    <div class="container mt-4" style="width: 80%;"> 
+        
+        <h2 style="font-weight: bolder;">Cast</h2>
+        <div id="castCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-start">
+                        {% for i in member %}
+                            {% if i.cast %}
+                                <div class="text-center mx-3 mb-3">  
+                                    <img src="{{i.img.url}}" class="rounded-circle" style="width: 130px; height: 130px; object-fit: cover;padding: 10px;">
+                                    <div>
+                                        <h5 style="font-size: 15px;font-weight:bolder;">{{i.name}}</h5>
+                                        <h6>{{i.position}}</h6>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#castCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#castCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    
+        
+        <h2 style="font-weight: bolder;">Crew</h2>
+        <div id="crewCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-start">  
+                        {% for i in member %}
+                            {% if i.crew %}
+                                <div class="text-center mx-3 mb-3">
+                                    <img src="{{i.img.url}}" class="rounded-circle" style="width: 130px; height: 130px; object-fit: cover;padding: 10px;">
+                                    <div>
+                                        <h4 style="font-size: 15px;font-weight:bold;">{{i.name}}</h4>
+                                        <h6>{{i.position}}</h6>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        
+            <button class="carousel-control-prev" type="button" data-bs-target="#crewCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#crewCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+    
+<!-- 
     <div class="carousel slide container mt-4" id="caro" data-bs-ride="carousel" style="width: 80%;">   
          <div  class="carousel-inner">
 
@@ -144,7 +207,7 @@
             <span class="carousel-control-next-icon"></span>
            </button>
          </div> 
-    </div>
+    </div> -->
     
 </body>
 </html>
