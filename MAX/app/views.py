@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 # Create your views here.
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 def shop_login(req):
     if 'shop' in req.session:
@@ -40,6 +43,8 @@ def  register(req):
         name=req.POST['name']       
         email=req.POST['email']
         password=req.POST['password']
+        send_mail('Eshop registration', 'E_shop account created', settings.EMAIL_HOST_USER, [email])
+
         try:
             data=User.objects.create_user(first_name=name,username=email,email=email,password=password)
             data.save()
